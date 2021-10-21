@@ -1,16 +1,26 @@
 import React from 'react';
 // ADD CODE HERE
+import Block from './Block';
+
+const blocks = [];
+let length = 0;
 
 class Feed extends React.Component {
 
     state = {
       // ADD CODE HERE
+      blocks: [],
+      length: 0,
       showopt: false
     }
 
     addBlock = (color) => {
+      let props = {col: color};
+      let newlen = blocks.unshift(<Block {...props} />)
         this.setState({
         // ADD CODE HERE
+        length: newlen
+        //blocks: <Block {...props} />
       })
     }
 
@@ -32,7 +42,7 @@ class Feed extends React.Component {
       return (
         <div className = 'mainfeed'>
         <div className="input">
-        {/* ADD CODE HERE */}
+        {blocks}
         </div>
         <div>
           <button class="button" onClick={this.pickColorlayout}>+ Post Block</button>

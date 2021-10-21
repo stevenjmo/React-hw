@@ -20,7 +20,6 @@ class Feed extends React.Component {
         this.setState({
         // ADD CODE HERE
         length: newlen
-        //blocks: <Block {...props} />
       })
     }
 
